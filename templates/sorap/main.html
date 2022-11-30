@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<div style=" padding:0px 0px 0px 4px ; margin:0px 0px 0px 10px;">
+    <button type="button" class="btn text-black" style="background-color: #50FF50;" onclick="location.href='{% url 'sorap:fileupload' %}'">파일 업로드</button>
+    <button type="button" class="btn text-black" style="background-color: #50FF50;" onclick="location.href='{% url 'sorap:filedelete' %}'">파일 삭제</button>
+    <button type="button" class="btn text-black" style="background-color: #50FF50;" onclick="location.href='{% url 'sorap:filedownload' %}'">파일 다운로드</button>
+</div>
+<div style="border-bottom: solid 1px #a9a9a9; border-left: solid 7px #84C55E; padding:0px 0px 0px 4px ; margin:50px 0px 20px 0px; font-size: 18px; font-family: 'Nanum Gothic';">
+<p><strong>파일함</strong></p>
+</div>
+
+{% if file_list %}
+<div style="margin:00px 0px 00px 30px;font-size: 15px; font-family: 'Gothic';">
+{% for items in file_list %}
+    <p><a href="../filedir/user_{{user.username}}/{{items.file_name}}">{{items.file_name}}</a></p>
+{% endfor %}
+</div>
+{% else %}
+<div style=" padding:0px 0px 0px 4px ; margin:50px 0px 20px 0px; font-size: 18px; font-family: 'Nanum Gothic';">
+<p><strong>파일이 없습니다.</strong></p>
+</div>
+{% endif %}
+{% endblock %}

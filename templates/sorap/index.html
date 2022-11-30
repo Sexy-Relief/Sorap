@@ -1,0 +1,22 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+<!DOCTYPE html>
+<html>
+<title>Sorap Cloud System</title>
+<body>
+<p style="text-align: center;">
+    <img src="/static/img/mainicon.png" alt="mainicon" width="300" height="300">
+</p>
+<p style="text-align: center;">
+    <img src="/static/img/mainletter.png" alt="mainletter" width="300" height="100">
+</p>
+<p style="text-align: center;">
+    {% if user.is_authenticated %}
+    <button type="button" class="btn text-white" style="background-color: #00FF00;" onclick="location.href='{% url 'common:logout' %}'">로그아웃</button>
+    {% else %}
+    <button type="button" class="btn text-white" style="background-color: #00FF00;" onclick="location.href='{% url 'common:login' %}'">로그인</button>
+    {% endif %}
+    <button type="button" class="btn text-white" style="background-color: #00FF00;" onclick="location.href='{% url 'common:signup' %}'">회원가입</button>
+</p>
+</body>
+</html>

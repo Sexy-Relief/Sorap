@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <form method="POST" action="{% url 'sorap:fileupload' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br><br>
+        <input type="hidden" name="userinfo" value="{{user.username}}">
+        <p style="text-align: center;"><input type="file" data-class-button="btn btn-default" name="imgfile"><br><br><br><br>
+        <input type="submit" class="btn btn-primary col" value="업로드">
+        </p>
+    </form>
+
+{% endblock%}
