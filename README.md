@@ -1,5 +1,5 @@
 # Sorap-Web part with Django framework
-AI document classification Web site
+AI document classification Web site.
 
 학기 프로젝트- 자동 문서분류 클라우드 시스템 중 Web Part respository
 
